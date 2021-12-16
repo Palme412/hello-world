@@ -27,6 +27,26 @@ const commentList = [
         message: 'Lets go ...',
         author: '@tombrady'
     },
+    {
+        message: 'what are those',
+        author: '@xanderino'
+    },
+    {
+        message: 'lolcats',
+        author: '@whatever jones'
+    },
+    {
+        message: 'crocs are stylish',
+        author: '@steve jobs'
+    },
+    {
+        message: 'im with stupid',
+        author: '@stupid'
+    },
+    {
+        message: 'XXX NSFW',
+        author: '@teenager'
+    },
 ]
 
 const displayCommentList = commentList.map((c, idx) => {
@@ -142,7 +162,7 @@ class Forum extends Component {
                                     <li><span className="tag is-dark is-medium ">Payments</span></li>
                                     <li><span className="tag is-success is-medium ">Transfers</span></li>
                                     <li><span className="tag is-warning is-medium ">Balance</span></li>
-                                    <li><span className="tag is-medium ">Question</span></li>
+                                    <li><span className="tag is-medium " title='Question'>Question</span></li>
                                 </ul>
                             </aside>
                         </div>
