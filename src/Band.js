@@ -1,80 +1,64 @@
 import React, { Component } from 'react';
 import './Band.css';
-
-const comment = {
-    name: 'Jake Palmer',
-    tag: '@JakePalmer'
-}
+import Card from './Card';
 
 const commentList = [
     {
-        name: 'John Smith',
-        tag: '@johnsmith'
+        name: 'Jake Palmer',
+        tag: '@JakePalmer',
     },
     {
-        name: 'Jack White',
-        tag: '@jackwhite'
-    },
-    {
-        name: 'Jake Hill',
-        tag: '@jakehill'
-    },
-    {
-        name: 'Kellin Quinn',
-        tag: '@kellinquinn'
-    },
-    {
-        name: 'Travis Barker',
-        tag: '@travisbarker'
-    },
-    {
-        name: 'Mike Smith',
-        tag: '@mikesmith'
-    },
-    {
-        name: 'Rome Bell',
-        tag: '@romebell'
-    },
-    {
-        name: 'Oliver Sykes',
-        tag: '@olisykes'
-    },
-    {
-        name: 'Eminem',
-        tag: '@eminem'
-    },
-    {
-        name: 'Hardy',
-        tag: '@hardy'
+        name: 'Jake Palmer',
+        tag: '@JakePalmer',
     },
 ]
+// const commentList = [
+//     {
+//         name: 'John Smith',
+//         tag: '@johnsmith',
+//         comment: 'This is a comment'
+//     },
+//     {
+//         name: 'Jack White',
+//         tag: '@jackwhite'
+//     },
+//     {
+//         name: 'Jake Hill',
+//         tag: '@jakehill'
+//     },
+//     {
+//         name: 'Kellin Quinn',
+//         tag: '@kellinquinn'
+//     },
+//     {
+//         name: 'Travis Barker',
+//         tag: '@travisbarker'
+//     },
+//     {
+//         name: 'Mike Smith',
+//         tag: '@mikesmith'
+//     },
+//     {
+//         name: 'Rome Bell',
+//         tag: '@romebell'
+//     },
+//     {
+//         name: 'Oliver Sykes',
+//         tag: '@olisykes'
+//     },
+//     {
+//         name: 'Eminem',
+//         tag: '@eminem'
+//     },
+//     {
+//         name: 'Hardy',
+//         tag: '@hardy'
+//     },
+// ]
 
 const displayCommentList = commentList.map((c, idx) => {
     return (
-        <article className="post" key={idx}>
-            <div className="card">
-                <div className="card-image">
-                    <figure className="image is-2by1">
-                        <img src="https://images.pexels.com/photos/167635/pexels-photo-167635.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Placeholder image" />
-                    </figure>
-                </div>
-                <div className="card-content">
-                    <div className="media">
-                        <div className="media-content">
-                            <p className="title is-4">John Smith</p>
-                            <p className="subtitle is-6">@johnsmith</p>
-                        </div>
-                    </div>
-
-                    <div className="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-                        <a>@bulmaio</a>.
-                        <a href="#">#css</a>
-                        <a href="#">#responsive</a>
-                    </div>
-                </div>
-            </div>
-        </article>
+        <Card key={idx} index={idx} name={c.name} user={c.tag} />
     );
 });
 
@@ -147,35 +131,14 @@ class Band extends Component {
 
                 <section className="section">
                     <div className="container has-text-centered">
-                        <h1>{comment.name}</h1>
+                        {/* <h1>{commentList.name}</h1> */}
                         <p>We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
                             aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
                             laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
                         <div className="columns is-centered" style={{ padding: "2rem" }}>
                             <div className="column">
-                                <div className="card">
-                                    <div className="card-image">
-                                        <figure className="image is-2by1">
-                                            <img src="https://images.pexels.com/photos/167635/pexels-photo-167635.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Placeholder image" />
-                                        </figure>
-                                    </div>
-                                    <div className="card-content">
-                                        <div className="media">
-                                            <div className="media-content">
-                                                <p className="title is-4">John Smith</p>
-                                                <p className="subtitle is-6">@johnsmith</p>
-                                            </div>
-                                        </div>
-
-                                        <div className="content">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-                                            <a>@bulmaio</a>.
-                                            <a href="#">#css</a>
-                                            <a href="#">#responsive</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                <Card index={99} name={commentList.name} user={commentList.tag} />
                             </div>
                             <div className="column">
                                 <div className="card">
@@ -389,6 +352,7 @@ class Band extends Component {
                                 </div>
                             </div>
                         </form>
+                        {displayCommentList}
                     </div>
                 </section>
 
