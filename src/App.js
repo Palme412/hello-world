@@ -8,6 +8,7 @@ import Football from './Football';
 import Curling from './Curling';
 import Cover from './Cover';
 import Forum from './Forum';
+import Band from './Band';
 
 // Basketball
 const basketPlayer = {
@@ -61,14 +62,14 @@ const displayTeam4 = searchTeam4.map((player, idx) => {
   )
 })
 
-console.log(searchTeam4);
+// console.log(searchTeam4);
 
 class App extends Component {
   render() {
     return (
       <div className="App">
 
-        <Forum />
+        <Band />
       </div>
     )
   }
